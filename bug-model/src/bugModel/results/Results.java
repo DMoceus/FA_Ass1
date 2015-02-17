@@ -82,6 +82,14 @@ public class Results implements Display, FileLog, StoreMovements {
 			return -1;
 		}
 	}
+	
+	public String toString(){
+		String temp = "";
+		for(int i=0; i<log.size(); i++){
+			temp = temp + log.get(i);
+		}
+		return temp;
+	}
 
 } // end public class Results
 

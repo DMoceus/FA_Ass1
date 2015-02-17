@@ -1,5 +1,6 @@
 package bugModel.results;
 
+
 public interface FileLog {
     // add appropriate method 
 	public int writeToFile(String fileName);
