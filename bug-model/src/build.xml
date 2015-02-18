@@ -51,8 +51,10 @@
 
 <target name="run" depends="jar">
         <java jar="${BUILD}/jar/bugModel.jar"  fork="true">
-        	<arg value="${arg0}"/>
-       		<arg value="${arg1}"/>
+        	<!--<arg value="${arg0}"/> -->
+			<arg value="3"/>
+       		<!--<arg value="${arg1}"/> -->
+			<arg value="bugLog.txt"/>
         	<arg value="${arg2}"/>
         </java>
 	

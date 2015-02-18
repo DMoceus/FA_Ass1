@@ -4,14 +4,25 @@ import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 import bugModel.util.Debug;
 
+/**
+ * Log File for Bug Class
+ */
 public class Results implements Display, FileLog, StoreMovements {
 	private ArrayList<Integer> log;// = new ArrayList<Integer>();
 	
+	/**
+	 * Default Constructor for Results
+	 */
 	public Results(){
 		this.log = new ArrayList<Integer>();
 		Debug.printToStdout(4,"Results Constructor Called");
 	}
 	
+	/**
+	 * Adds a movement of a Bug to the Log File
+	 * @param  direction represents up, down, left, or right
+	 * @return           Error Codes
+	 */
 	public int addMovement(int direction){
 		log.add(direction);
 		Debug.printToStdout(3,"addMovement(int direction) called");
@@ -19,6 +30,11 @@ public class Results implements Display, FileLog, StoreMovements {
 		return 0;
 	}
 
+	/**
+	 * Case !list.empty : Remove last element of list
+	 * Case list.empty  : Append 0 to list
+	 * @return            Error Codes
+	 */
 	public int removeLast(){
 		Debug.printToStdout(3,"removeLast() called");
 		Debug.printToStdout(2,"Member removed from Results");
@@ -31,6 +47,10 @@ public class Results implements Display, FileLog, StoreMovements {
 		return 0;
 	}
 
+	/**
+	 * Writes contents of this Results object to STDOUT
+	 * @return Error Codes
+	 */
 	public int writeToScreen(){
 		Debug.printToStdout(3,"writeToScreen() called");
 		for(int i=0; i<log.size();i++){
@@ -40,6 +60,12 @@ public class Results implements Display, FileLog, StoreMovements {
 		return 0;
 	}
 	
+	/**
+	 * Writes Results within the index range [a,b] to STDOUT
+	 * @param a Low end of Range
+	 * @param b High end of Range
+	 * @return Error Codes
+	 */
 	public int writeRangeToScreen(int a, int b){
 		Debug.printToStdout(3,"writeRangeToScreen(int a, int b) called");
 		if(a >= 0 && a < log.size() && b >= a && b < log.size()){
@@ -54,6 +80,11 @@ public class Results implements Display, FileLog, StoreMovements {
 		}
 	}
 
+	/**
+	 * Writes contents of this Results object to file
+	 * @param fileName String name of the file to be written to
+	 * @return         Error Codes
+	 */
 	public int writeToFile(String fileName){
 		Debug.printToStdout(3,"writeToFile(String fileName) called");
 		try{
@@ -71,6 +102,14 @@ public class Results implements Display, FileLog, StoreMovements {
 		}
 	}
 
+	/**
+	 * Writes contents of this Results object within the index 
+	 * range [a,b] to file
+	 * @param fileName String name of the file to be written to
+	 * @param a        Low end of Range
+	 * @param b        High end of Range
+	 * @return         Error Codes
+	 */
 	public int writeRangeToFile(String fileName, int a, int b){
 		Debug.printToStdout(3,"writeRangeToFile(String fileName, int a, int b) called");
 		try{
@@ -92,7 +131,10 @@ public class Results implements Display, FileLog, StoreMovements {
 			return -1;
 		}
 	}
-	
+	/**
+	 * Returns a string representation of this Results object
+	 * @return String Representation of this Results Object
+	 */
 	public String toString(){
 		Debug.printToStdout(3,"toString() called");
 		String temp = "";
