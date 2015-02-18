@@ -1,5 +1,5 @@
-CS542 Design Patterns
-Spring 2011
+CS442 Design Patterns
+Spring 2015
 PROJECT 1 README FILE
 
 Due Date: Wednesday, February 18, 2015
