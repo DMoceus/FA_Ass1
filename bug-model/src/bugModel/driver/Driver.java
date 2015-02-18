@@ -7,6 +7,7 @@ import bugModel.results.Display;
 import bugModel.results.StoreMovements;
 import bugModel.bug.AllDirectionsBug;
 import bugModel.bug.Bug;
+import bugModel.util.Debug;
 
 public class Driver{
 
@@ -16,6 +17,8 @@ public class Driver{
 			System.err.println("Usage:  FIXME\n");
 			System.exit(1);
 		}
+		
+		Debug.setDebug(Integer.parseInt(args[0]));
 		
 		//AllDirectionsBug a = new Bug();
 		Display res = new Results();
